@@ -61,18 +61,90 @@
     <p class="lead">The most advanced task estimation tool!<br>As acurate as it can possibly be!</p>
 
 
-    <label class="d-block mt-4" for="taskDescription">
-      Place your task especification here:
-    </label>
-    <textarea class="description-field mt-0" id="taskDescription" cols="40" rows="10"></textarea>
+    <form>
+      <label class="h5 d-block mt-4" for="taskDescription">
+        Place your task especification here:
+      </label>
+      <textarea class="description-field mt-0" id="taskDescription" cols="42" rows="6" required></textarea>
 
-    <fieldset>
-      <legend for="scaleField" class="d-block mt-2">
-        Choose your estimation scale:
-      </legend>
+      <fieldset class="scales-fieldset mt-4">
+        <legend class="h5">
+          Choose your estimation scale:
+        </legend>
 
-      <input type="radio" name="" id="">
-    </fieldset>
+        <div class="d-flex justify-content-center">
+          <div class="d-flex flex-column align-items-start mr-4">
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="fibonacci5" id="scaleField"/>
+                Fibonacci 0-5
+              </label>
+            </span>
+
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="fibonacci8" id="scaleField"/>
+                Fibonacci 0-8
+              </label>
+            </span>
+
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="fibonacci13" id="scaleField"/>
+                Fibonacci 0-13
+              </label>
+            </span>
+          </div>
+
+          <div class="d-flex flex-column align-items-start">
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="pmg" id="scaleField"/>
+                PMG
+              </label>
+            </span>
+
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="linear" id="scaleField"/>
+                Linear 0-10
+              </label>
+            </span>
+
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="cards" id="scaleField"/>
+                Cards
+              </label>
+            </span>
+
+            <span>
+              <label>
+                <input type="radio" required name="scaleField" value="tshirts" id="scaleField"/>
+                T-shirts sizes
+              </label>
+            </span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="row">
+        <div class="col-12 center">
+          <button type="submit" class="btn btn-primary btn-lg mt-4">
+            Estimate!
+          </button>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 center">
+          <span class="h3 mr-2">Estimation:</span>
+          <span class="h1" id="score">...</span>
+        </div>
+      </div>
+    </form>
   </main>
+
+  <script async defer src="/public/main.js"></script>
 </body>
 </html>
